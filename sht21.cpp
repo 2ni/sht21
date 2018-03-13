@@ -40,9 +40,6 @@ uint16_t SHT21::readSHT21(uint8_t command, int *ok) {
     delay(100);
 
     Wire.requestFrom(SHT21_ADDRESS, 3);
-    while(Wire.available() < 3) {
-      delay(1);
-    }
 
     // return result
     result = ((Wire.read()) << 8);
